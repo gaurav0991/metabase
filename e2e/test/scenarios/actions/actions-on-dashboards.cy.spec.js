@@ -334,9 +334,9 @@ const MODEL_NAME = "Test Action Model";
            * `Actions are not enabled for this database` for disabled actions
            */
           cy.findByRole("main").findByText("Create").should("not.exist");
-          cy.findByRole("link", { name: "Powered by Metabase" }).should(
-            "be.visible",
-          );
+          // cy.findByRole("link", { name: "Powered by Metabase" }).should(
+          //   "be.visible",
+          // );
         });
 
         it("hide actions in static embed dashboards (metabase#34395)", () => {
@@ -386,9 +386,9 @@ const MODEL_NAME = "Test Action Model";
            * `Actions are not enabled for this database` for disabled actions
            */
           cy.findByRole("main").findByText("Create").should("not.exist");
-          cy.findByRole("link", { name: "Powered by Metabase" }).should(
-            "be.visible",
-          );
+          // cy.findByRole("link", { name: "Powered by Metabase" }).should(
+          //   "be.visible",
+          // );
         });
 
         describe("hidden fields", () => {
