@@ -45,7 +45,7 @@ export function getMetabaseCssVariables(theme: MantineTheme) {
       --mb-default-font-family: "${theme.fontFamily}";
 
       /* Semantic colors */
-      --mb-color-brand: ${theme.fn.themeColor("brand")};
+      // --mb-color-brand: ${theme.fn.themeColor("brand")};
       --mb-color-summarize: ${theme.fn.themeColor("summarize")};
       --mb-color-filter: ${theme.fn.themeColor("filter")};
       ${getThemeSpecificCssVariables(theme)}

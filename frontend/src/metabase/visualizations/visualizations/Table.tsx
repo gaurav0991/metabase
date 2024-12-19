@@ -216,6 +216,7 @@ class Table extends Component<TableProps, TableState> {
     const options = [
       { name: t`Text`, value: null },
       { name: t`Link`, value: "link" },
+      { name: t`AppEQ Action`, value: "AppEQAction" },
     ];
 
     if (!column.semantic_type || isEmail(column)) {

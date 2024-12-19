@@ -59,6 +59,17 @@ function getCellData({
       />
     );
   }
+  if (columnSettings["view_as"] === "AppEQAction") {
+    return (
+      <div style={{ display: "flex", gap: "8px" }}>
+        {/* Send Email Action */}
+        <img
+          style={{ height: "16px" }}
+          src="https://img.freepik.com/premium-vector/e-mail-icon-black-fill-icon_1076610-45625.jpg?semt=ais_hybrid"
+        />
+      </div>
+    );
+  }
   return formatValue(value, {
     ...columnSettings,
     clicked: { ...clicked, extraData },
