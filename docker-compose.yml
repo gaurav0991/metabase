@@ -13,8 +13,5 @@ services:
       - "3000:3000"  # Expose port 3050 for Metabase
     environment:
       MB_DB_TYPE: h2
-      MB_IS_METABOT_ENABLED: "true"
-    volumes:
-      - /home/ubuntu/metabase-docker/metabase-data:/metabase-docker/metabase-data  # Absolute path to metabase-data
-      - /home/ubuntu/metabase-docker/plugins:/plugins  # Absolute path to plugins
+      MB_IS_METABOT_ENABLED: "true" # Absolute path to plugins
     restart: unless-stopped
