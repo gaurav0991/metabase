@@ -1,0 +1,22 @@
+ubuntu@ip-172-31-6-51:~/appeq-metabase/metabase$ cat docker-compose.yml 
+version: '3.8'
+
+services:
+  metabase:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VERSION: v0.47.0  # Replace with your desired Metabase version
+        MB_EDITION: oss  # Replace with your desired edition (oss or pro)
+    image: appeq_metabase:latest
+    container_name: appeq_metabase
+    ports:
+      - "3000:3000"  # Expose port 3050 for Metabase
+    environment:
+      MB_DB_TYPE: h2
+      MB_IS_METABOT_ENABLED: "true"
+    volumes:
+      - /home/ubuntu/metabase-docker/metabase-data:/metabase-docker/metabase-data  # Absolute path to metabase-data
+      - /home/ubuntu/metabase-docker/plugins:/plugins  # Absolute path to plugins
+    restart: unless-stopped
