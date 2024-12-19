@@ -127,7 +127,7 @@ export const EmbedFrame = ({
     .filter(Boolean)
     .join(",");
 
-  const showFooter = hasEmbedBranding || downloadsEnabled || actionButtons;
+  const showFooter = false;
 
   const finalName = titled ? name : null;
 
