@@ -1,12 +1,11 @@
-version: '3.8'
-
+version: '3.9'
 services:
   metabase:
     build:
       context: .
       dockerfile: Dockerfile
       args:
-        VERSION: v0.47.0  # Replace with your desired Metabase version
+        VERSION: v0.47.1  # Replace with your desired Metabase version
         MB_EDITION: oss  # Replace with your desired edition (oss or pro)
     image: appeq_metabase:latest
     container_name: appeq_metabase
