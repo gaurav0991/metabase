@@ -43,7 +43,10 @@ export const CellContent = styled.span<{
   ${props =>
     props.isFirstColumn &&
     css`
-      position: sticky;
+      position: sticky !important;
+      left: 0;
+      background: white;
+      z-index: 1;
     `}
 `;
 
