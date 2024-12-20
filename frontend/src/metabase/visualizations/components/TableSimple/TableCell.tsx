@@ -82,6 +82,7 @@ function getCellData({
 interface TableCellProps {
   value: RowValue;
   data: DatasetData;
+  isFirstColumn: boolean;
   series: Series;
   settings: VisualizationSettings;
   rowIndex: number;
@@ -100,6 +101,7 @@ interface TableCellProps {
 export function TableCell({
   value,
   data,
+  isFirstColumn,
   series,
   settings,
   rowIndex,
@@ -206,6 +208,7 @@ export function TableCell({
         isHighlighted={isID(column)}
         className={TableS.cellData}
         isClickable={isClickable}
+        isFirstColumn={isFirstColumn}
         onClick={isClickable ? onClick : undefined}
         data-testid="cell-data"
       >

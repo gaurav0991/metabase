@@ -17,7 +17,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install openjdk-11-jdk curl 
 COPY . .
 
 # version is pulled from git, but git doesn't trust the directory due to different owners
-RUN git config --global --add safe.directory /home/node
+# RUN git config --global --add safe.directory /home/node
 
 # install frontend dependencies
 RUN yarn --frozen-lockfile

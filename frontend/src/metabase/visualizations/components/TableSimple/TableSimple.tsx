@@ -167,8 +167,14 @@ function TableSimpleInner({
     (col: DatasetColumn, colIndex: number) => {
       const iconName = sortDirection === "desc" ? "chevrondown" : "chevronup";
       const onClick = () => setSort(colIndex);
+      const isFirstColumn = colIndex === 0;
+
       return (
-        <th key={colIndex} data-testid="column-header">
+        <th
+          className={isFirstColumn ? "fixed-column" : ""}
+          key={colIndex}
+          data-testid="column-header"
+        >
           <TableHeaderCellContent
             isSorted={colIndex === sortColumn}
             onClick={onClick}
@@ -188,22 +194,27 @@ function TableSimpleInner({
       const ref = index === 0 ? firstRowRef : null;
       return (
         <tr key={rowIndex} ref={ref} data-testid="table-row">
-          {data.rows[rowIndex].map((value, columnIndex) => (
-            <TableCell
-              key={`${rowIndex}-${columnIndex}`}
-              value={value}
-              data={data}
-              series={series}
-              settings={settings}
-              rowIndex={rowIndex}
-              columnIndex={columnIndex}
-              isPivoted={isPivoted}
-              getCellBackgroundColor={getCellBackgroundColor}
-              getExtraDataForClick={getExtraDataForClick}
-              checkIsVisualizationClickable={checkIsVisualizationClickable}
-              onVisualizationClick={onVisualizationClick}
-            />
-          ))}
+          {data.rows[rowIndex].map((value, columnIndex) => {
+            const isFirstColumn = columnIndex === 0;
+
+            return (
+              <TableCell
+                key={`${rowIndex}-${columnIndex}`}
+                value={value}
+                data={data}
+                isFirstColumn={isFirstColumn}
+                series={series}
+                settings={settings}
+                rowIndex={rowIndex}
+                columnIndex={columnIndex}
+                isPivoted={isPivoted}
+                getCellBackgroundColor={getCellBackgroundColor}
+                getExtraDataForClick={getExtraDataForClick}
+                checkIsVisualizationClickable={checkIsVisualizationClickable}
+                onVisualizationClick={onVisualizationClick}
+              />
+            );
+          })}
         </tr>
       );
     },

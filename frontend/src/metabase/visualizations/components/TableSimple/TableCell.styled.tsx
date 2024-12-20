@@ -23,6 +23,7 @@ export const CellRoot = styled.td<{
 export const CellContent = styled.span<{
   isClickable: boolean;
   isHighlighted: boolean;
+  isFirstColumn: boolean;
 }>`
   display: inline-block;
 
@@ -36,6 +37,13 @@ export const CellContent = styled.span<{
       &:hover {
         color: var(--mb-color-brand);
       }
+    `}
+
+  
+  ${props =>
+    props.isFirstColumn &&
+    css`
+      position: sticky;
     `}
 `;
 
