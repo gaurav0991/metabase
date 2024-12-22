@@ -11,7 +11,17 @@ services:
     container_name: appeq_metabase
     ports:
       - "3000:3000"  # Expose port 3050 for Metabase
+    volumes:
+      - ./metabase-data:/metabase-data
+      - ./metabase-data/plugins:/metabase-data/plugins
     environment:
       MB_DB_TYPE: h2
+      MB_DB_FILE: /metabase-data
       MB_IS_METABOT_ENABLED: "true" # Absolute path to plugins
     restart: unless-stopped
+
+
+
+
+
+
