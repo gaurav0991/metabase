@@ -196,7 +196,6 @@ function TableSimpleInner({
         <tr key={rowIndex} ref={ref} data-testid="table-row">
           {data.rows[rowIndex].map((value, columnIndex) => {
             const isFirstColumn = columnIndex === 0;
-
             return (
               <TableCell
                 key={`${rowIndex}-${columnIndex}`}

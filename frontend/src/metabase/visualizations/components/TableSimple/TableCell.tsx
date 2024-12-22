@@ -201,6 +201,7 @@ export function TableCell({
   return (
     <CellRoot
       className={classNames}
+      columnIndex={columnIndex}
       backgroundColor={backgroundColor}
       isRightAligned={isColumnRightAligned(column)}
     >
@@ -209,6 +210,7 @@ export function TableCell({
         className={TableS.cellData}
         isClickable={isClickable}
         isFirstColumn={isFirstColumn}
+        columnIndex={columnIndex}
         onClick={isClickable ? onClick : undefined}
         data-testid="cell-data"
       >

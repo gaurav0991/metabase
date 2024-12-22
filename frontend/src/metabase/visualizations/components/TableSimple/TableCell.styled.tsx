@@ -6,6 +6,7 @@ import type { MantineTheme } from "metabase/ui";
 export const CellRoot = styled.td<{
   isRightAligned: boolean;
   backgroundColor?: string;
+  columnIndex: number;
 }>`
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -13,6 +14,9 @@ export const CellRoot = styled.td<{
   font-weight: bold;
   text-align: ${props => (props.isRightAligned ? "right" : "unset")};
   white-space: nowrap;
+  position: ${props => (props.columnIndex === 0 ? "sticky" : "")};
+  left: 0;
+  background: white !important;
   border-bottom: 1px solid var(--mb-color-border);
   background-color: ${props =>
     props.backgroundColor ??
@@ -24,6 +28,7 @@ export const CellContent = styled.span<{
   isClickable: boolean;
   isHighlighted: boolean;
   isFirstColumn: boolean;
+  columnIndex: number;
 }>`
   display: inline-block;
 
@@ -42,6 +47,15 @@ export const CellContent = styled.span<{
   
   ${props =>
     props.isFirstColumn &&
+    css`
+      position: sticky !important;
+      left: 0;
+      background: white;
+      z-index: 1;
+    `}
+  
+     ${props =>
+    props.columnIndex === 0 &&
     css`
       position: sticky !important;
       left: 0;
