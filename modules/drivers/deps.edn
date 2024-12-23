@@ -8,6 +8,7 @@
 
  :deps
  {metabase/athena             {:local/root "athena"}
+  metabase/clickhouse         {:local/root "metabase-clickhouse-driver"} ;
   metabase/bigquery-cloud-sdk {:local/root "bigquery-cloud-sdk"}
   metabase/databricks         {:local/root "databricks"}
   metabase/druid              {:local/root "druid"}

@@ -51,6 +51,9 @@ RUN apk add -U bash fontconfig curl font-noto font-noto-arabic font-noto-hebrew 
 COPY --from=builder /home/node/target/uberjar/metabase.jar /app/
 COPY bin/docker/run_metabase.sh /app/
 
+RUN curl -L -o /plugins/clickhouse.metabase-driver.jar https://downloads.metabase.com/plugins/clickhouse/latest/clickhouse.metabase-driver.jar
+
+
 # expose our default runtime port
 EXPOSE 3000
 
